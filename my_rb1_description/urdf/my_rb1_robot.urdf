@@ -22,11 +22,9 @@
     <!-- TO DO: Set correct joint type -->
     <joint name="base_link_plate_joint" type="fixed">
         <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <origin xyz="0 0 0" rpy "0 0 0"/>
-        <!-- TO DO: Define parent -->
+        <axis xyz="0 0 0"/>
+        <origin xyz="0 0 0" rpy = "0 0 0"/>
         <parent link="base_link"/>
-        <!-- TO DO: Define child -->
         <child link="base_footprint"/>
     </joint>
 
@@ -35,123 +33,167 @@
         
         <visual>
             <geometry>
-                <cylinder radius =".25" height =".30"/>
+                <cylinder radius ="0.25" length ="0.30"/>
             </geometry>
             <material name="blue"/>       
         </visual>
         <collision>
         <geometry>
-            <cylinder radius =".25" height =".30"/>
+            <cylinder radius =".25" length =".30"/>
         </geometry>
         </collision>   
         <inertial>
-            <mass value="25" />
+            <mass value="19" />
             <origin xyz="0 0 0.3" rpy="0 0 0" />
             <inertia ixx="0.578125" ixy="0" ixz="0" iyy="0.578125" iyz="0" izz="0.78125" />
         </inertial>
 
-        
     </link>
 
     <!-- Left wheel link -->
-    <link name="left_wheel">
-        <!-- TO DO: Add visual tag -->
-        <!-- TO DO: Add collision tag -->
-        <!-- TO DO: Add inertial tag -->
-            
+    <link name="left_wheel">            
         <visual>
         <geometry>
-            <cylinder radius =".025" height =".01"/>
+            <cylinder radius =".025" length =".010"/>
         </geometry>
         <material name="red"/>       
         </visual>
         <collision>
         <geometry>
-            <cylinder radius =".025" height =".010"/>
+            <cylinder radius =".025" length =".010"/>
         </geometry>
         </collision>   
         <inertial>
-            <mass value="2.5" />
+            <mass value="2" />
             <origin xyz="0 0 0" rpy="0 0 0" />
             <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
         </inertial>
     </link>
 
     <!-- Joint connecting base_link and left_wheel -->
-    <!-- TO DO: Set correct joint type -->
+    <!-- TO DO: Set correct joint type --> <!--0.3005 0 -0.1-->
     <joint name="base_link_left_wheel_joint" type="continuous">
-        <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <!-- TO DO: Define parent -->
-        <!-- TO DO: Define child -->
-        <origin xyz="0.3005 0 -0.1" rpy="0 0 0" />
+        <origin xyz="0 -0.2 -0.15" rpy="1.57 0 0 " />
         <child link="left_wheel" />
-        <parent link="link_chassis" />
-        <axis rpy="0 0 0" xyz="0 1 0" />
+        <parent link="base_link" />
+        <axis rpy="0 0 0" xyz="0 0 1" />
         <limit effort="10000" velocity="1000" />
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
     <!-- Right wheel link -->
     <link name="right_wheel">
-        <!-- TO DO: Add visual tag -->
-        <!-- TO DO: Add collision tag -->
-        <!-- TO DO: Add inertial tag -->
+         <visual>
+        <geometry>
+            <cylinder radius =".025" length =".010"/>
+        </geometry>
+        <material name="red"/>       
+        </visual>
+        <collision>
+        <geometry>
+            <cylinder radius =".025" length =".010"/>
+        </geometry>
+        </collision>   
+        <inertial>
+            <mass value="2" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+        </inertial>
     </link>
 
     <!-- Joint connecting base_link and right_wheel -->
     <!-- TO DO: Set correct joint type -->
-    <joint name="base_link_right_wheel_joint" type="">
-        <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <!-- TO DO: Define parent -->
-        <!-- TO DO: Define child -->
+    <joint name="base_link_right_wheel_joint" type="continuous">
+        <origin xyz="0 0.2 -0.15" rpy="1.57 0 0 " />
+        <child link="right_wheel" />
+        <parent link="base_link" />
+        <axis rpy="0 0 0" xyz="0 0 1" />
+        <limit effort="10000" velocity="1000" />
+        <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
     <!-- Front caster -->
     <link name="front_caster">
-        <!-- TO DO: Add visual tag -->
-        <!-- TO DO: Add collision tag -->
-        <!-- TO DO: Add inertial tag -->
+        <visual>
+        <geometry>
+            <cylinder radius =".025" length =".10"/>
+        </geometry>
+        <material name="gray"/>       
+        </visual>
+        <collision>
+        <geometry>
+            <cylinder radius =".025" length =".010"/>
+        </geometry>
+        </collision>   
+        <inertial>
+            <mass value="0.5" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+        </inertial>
     </link>
 
+
     <!-- Joint connecting base_link and front_caster -->
-    <!-- TO DO: Set correct joint type -->
-    <joint name="base_link_front_caster_joint" type="">
-        <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <!-- TO DO: Define parent -->
-        <!-- TO DO: Define child -->
+
+    <joint name="base_link_front_caster_joint" type="fixed">
+        <origin xyz="-0.1 0 -0.15" rpy="1.57 0 0 " />
+        <child link="front_caster" />
+        <parent link="base_link" />
+        <axis rpy="0 0 0" xyz="0 0 0" />
+        <limit effort="10000" velocity="1000" />
+        <joint_properties damping="0" friction="0" />
     </joint>
+
 
     <!-- Back caster -->
     <link name="back_caster">
-        <!-- TO DO: Add visual tag -->
-        <!-- TO DO: Add collision tag -->
-        <!-- TO DO: Add inertial tag -->
+        <visual>
+        <geometry>
+            <cylinder radius =".025" length =".10"/>
+        </geometry>
+        <material name="gray"/>       
+        </visual>
+        <collision>
+        <geometry>
+            <cylinder radius =".025" length =".010"/>
+        </geometry>
+        </collision>   
+        <inertial>
+            <mass value="0.5" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+        </inertial>
     </link>
 
-    <!-- Joint connecting base_link and back_caster -->
-    <!-- TO DO: Set correct joint type -->
-    <joint name="base_link_back_caster_joint" type="">
-        <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <!-- TO DO: Define parent -->
-        <!-- TO DO: Define child -->
+
+    <!-- Joint connecting base_link and front_caster -->
+
+    <joint name="base_link_back_caster_joint" type="fixed">
+        <origin xyz="0.1 0 -0.15" rpy="1.57 0 0 " />
+        <child link="back_caster" />
+        <parent link="base_link" />
+        <axis rpy="0 0 0" xyz="0 1 0" />
+        <limit effort="10000" velocity="1000" />
+        <joint_properties damping="0" friction="0" />
     </joint>
 
     <!-- Link representing the front laser scanner -->
     <!--For this robot, the laser is not visible, so we won't define a body for it. -->
     <link name="front_laser">
+        <inertial>
+            <mass value="1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+        </inertial>
     </link>
 
     <!-- Joint connecting base_link and front_laser -->
     <!-- TO DO: Set correct joint type -->
-    <joint name="base_link_front_laser_joint" type="">
-        <!-- TO DO: Define axis (if needed) -->
-        <!-- TO DO: Define origin -->
-        <!-- TO DO: Define parent -->
-        <!-- TO DO: Define child -->
+    <joint name="base_link_front_laser_joint" type="fixed">
+        <origin xyz="0.25 0 0.075" rpy="3.14 0 0 " />
+        <child link="front_laser" />
+        <parent link="base_link" />
+        <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
-</robot>
+    </robot>
