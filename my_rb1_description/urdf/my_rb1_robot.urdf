@@ -43,9 +43,9 @@
         </geometry>
         </collision>   
         <inertial>
-            <mass value="19" />
+            <mass value="16" />
             <origin xyz="0 0 0.3" rpy="0 0 0" />
-            <inertia ixx="0.578125" ixy="0" ixz="0" iyy="0.578125" iyz="0" izz="0.78125" />
+            <inertia ixx="0.65" ixy="0" ixz="0" iyy="0.65" iyz="0" izz="0.5" />
         </inertial>
 
     </link>
@@ -54,19 +54,19 @@
     <link name="left_wheel">            
         <visual>
         <geometry>
-            <cylinder radius =".025" length =".010"/>
+            <cylinder radius =".025" length =".020"/>
         </geometry>
         <material name="red"/>       
         </visual>
         <collision>
         <geometry>
-            <cylinder radius =".025" length =".010"/>
+            <cylinder radius =".025" length =".020"/>
         </geometry>
         </collision>   
         <inertial>
             <mass value="2" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+            <inertia ixx="0.00364" ixy="0" ixz="0" iyy="0.00364" iyz="0" izz="0.000625" />
         </inertial>
     </link>
 
@@ -97,7 +97,7 @@
         <inertial>
             <mass value="2" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+            <inertia ixx="0.00364" ixy="0" ixz="0" iyy="0.00364" iyz="0" izz="0.000625" />
         </inertial>
     </link>
 
@@ -116,7 +116,7 @@
     <link name="front_caster">
         <visual>
         <geometry>
-            <cylinder radius =".025" length =".10"/>
+            <cylinder radius =".025" length =".010"/>
         </geometry>
         <material name="gray"/>       
         </visual>
@@ -126,9 +126,9 @@
         </geometry>
         </collision>   
         <inertial>
-            <mass value="0.5" />
+            <mass value="1.5" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+            <inertia ixx="0.001485" ixy="0" ixz="0" iyy="0.001485" iyz="0" izz="0.00046875" />
         </inertial>
     </link>
 
@@ -149,7 +149,7 @@
     <link name="back_caster">
         <visual>
         <geometry>
-            <cylinder radius =".025" length =".10"/>
+            <cylinder radius =".025" length ="0.10"/>
         </geometry>
         <material name="gray"/>       
         </visual>
@@ -159,9 +159,9 @@
         </geometry>
         </collision>   
         <inertial>
-            <mass value="0.5" />
+            <mass value="1.5" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+            <inertia ixx="0.001485" ixy="0" ixz="0" iyy="0.001485" iyz="0" izz="0.00046875" />
         </inertial>
     </link>
 
@@ -181,9 +181,9 @@
     <!--For this robot, the laser is not visible, so we won't define a body for it. -->
     <link name="front_laser">
         <inertial>
-            <mass value="1" />
+            <mass value="2" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00091" ixy="0" ixz="0" iyy="0.00091" iyz="0" izz="0.00078125" />
+            <inertia ixx="0.00198" ixy="0" ixz="0" iyy="0.00198" iyz="0" izz="0.000625" />
         </inertial>
     </link>
 
@@ -196,4 +196,72 @@
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
+
+
+<!-- Gazebo visualization -->
+<gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="left_wheel">
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+    <mu1>0.2</mu1>
+    <mu2>0.1</mu2>
+    <kp>0.5</kp>
+    <kd>2</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Orange</material>
+
+
+</gazebo>
+
+<gazebo reference="right_wheel">
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+    <mu1>0.2</mu1>
+    <mu2>0.1</mu2>
+    <kp>0.5</kp>
+    <kd>2</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/Orange</material>
+</gazebo>
+
+<gazebo reference="front_caster">
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <kp>0.5</kp>
+    <kd>2</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/red</material>
+</gazebo>
+
+<gazebo reference="back_caster">
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <kp>0.5</kp>
+    <kd>2</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/red</material>
+    
+</gazebo>
+
+
+    
     </robot>
