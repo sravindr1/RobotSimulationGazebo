@@ -35,5 +35,5 @@
     <!-- Combine joint values -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
-     
+     <node pkg="my_rb1_gazebo" type="move-display-odom.py" name="move_bot"/>
 </launch>
