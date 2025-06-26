@@ -219,5 +219,51 @@
    </joint>
 
 
+   <!-- Gazebo visualization -->
+<gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="left_wheel">
+    <material>Gazebo/Red</material>
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+</gazebo>
+
+<gazebo reference="right_wheel">
+    <material>Gazebo/Red</material>
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+</gazebo>
+
+<gazebo reference="front_caster">
+    <material>Gazebo/Orange</material>
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+</gazebo>
+
+<gazebo reference="back_caster">
+    <material>Gazebo/Orange</material>
+    <!-- TODO: Define mu1 (first friction coefficient) -->
+    <!-- TODO: Define mu2 (second friction coefficient) -->
+    <!-- TODO: Define kp (contact stiffness) -->
+    <!-- TODO: Define kd (contact damping) -->
+    <!-- TODO: Define fdir1 (friction direction) -->
+    <!-- TODO: Choose a material for visualization -->
+</gazebo>
+
+
    </robot>
 
