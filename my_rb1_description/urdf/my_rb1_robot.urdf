@@ -226,42 +226,38 @@
 
 <gazebo reference="left_wheel">
     <material>Gazebo/Red</material>
-    <!-- TODO: Define mu1 (first friction coefficient) -->
-    <!-- TODO: Define mu2 (second friction coefficient) -->
-    <!-- TODO: Define kp (contact stiffness) -->
-    <!-- TODO: Define kd (contact damping) -->
-    <!-- TODO: Define fdir1 (friction direction) -->
-    <!-- TODO: Choose a material for visualization -->
+    <mu1>0.2</mu1>
+    <mu2>0.3</mu2>
+    <kp>1</kp>
+    <kd>0.1</kd>
+    <fdir1> "1 0 0" </fdir1>
 </gazebo>
 
 <gazebo reference="right_wheel">
     <material>Gazebo/Red</material>
-    <!-- TODO: Define mu1 (first friction coefficient) -->
-    <!-- TODO: Define mu2 (second friction coefficient) -->
-    <!-- TODO: Define kp (contact stiffness) -->
-    <!-- TODO: Define kd (contact damping) -->
-    <!-- TODO: Define fdir1 (friction direction) -->
-    <!-- TODO: Choose a material for visualization -->
+    <mu1>0.2</mu1>
+    <mu2>0.3</mu2>
+    <kp>1</kp>
+    <kd>0.1</kd>
+    <fdir1> "1 0 0" </fdir1>
 </gazebo>
 
 <gazebo reference="front_caster">
     <material>Gazebo/Orange</material>
-    <!-- TODO: Define mu1 (first friction coefficient) -->
-    <!-- TODO: Define mu2 (second friction coefficient) -->
-    <!-- TODO: Define kp (contact stiffness) -->
-    <!-- TODO: Define kd (contact damping) -->
-    <!-- TODO: Define fdir1 (friction direction) -->
-    <!-- TODO: Choose a material for visualization -->
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <kp>1</kp>
+    <kd>0.1</kd>
+    <fdir1> "1 0 0" </fdir1>
 </gazebo>
 
 <gazebo reference="back_caster">
     <material>Gazebo/Orange</material>
-    <!-- TODO: Define mu1 (first friction coefficient) -->
-    <!-- TODO: Define mu2 (second friction coefficient) -->
-    <!-- TODO: Define kp (contact stiffness) -->
-    <!-- TODO: Define kd (contact damping) -->
-    <!-- TODO: Define fdir1 (friction direction) -->
-    <!-- TODO: Choose a material for visualization -->
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <kp>1</kp>
+    <kd>0.1</kd>
+    <fdir1> "1 0 0" </fdir1>
 </gazebo>
 
 
