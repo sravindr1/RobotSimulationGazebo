@@ -82,10 +82,10 @@
    <!-- Joint connecting base_link and left_wheel -->
    <!-- TO DO: Set correct joint type --> <!--0.3005 0 -0.1-->
    <joint name="base_link_left_wheel_joint" type="continuous">
-       <origin xyz="0 -0.2 -0.15" rpy="1.57 0 0 " />
+       <origin xyz="0 0.2 -0.15" rpy="1.57 0 0 " />
        <child link="left_wheel" />
        <parent link="base_link" />
-       <axis rpy="0 0 0" xyz="0 0 1" />
+       <axis rpy="0 0 0" xyz="0 0 -1" />
        <limit effort="10000" velocity="1000" />
        <joint_properties damping="1.0" friction="0.2" />
    </joint>
@@ -115,10 +115,10 @@
    <!-- Joint connecting base_link and right_wheel -->
    <!-- TO DO: Set correct joint type -->
    <joint name="base_link_right_wheel_joint" type="continuous">
-       <origin xyz="0 0.2 -0.15" rpy="1.57 0 0 " />
+       <origin xyz="0 -0.2 -0.15" rpy="1.57 0 0 " />
        <child link="right_wheel" />
        <parent link="base_link" />
-       <axis rpy="0 0 0" xyz="0 0 1" />
+       <axis rpy="0 0 0" xyz="0 0 -1" />
        <limit effort="10000" velocity="1000" />
        <joint_properties damping="1.0" friction="0.2" />
    </joint>
